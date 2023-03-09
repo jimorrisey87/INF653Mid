@@ -1,0 +1,5 @@
+SetEnv USERNAME "jimorrisey"
+SetEnv PASSWORD "JswoqoUV1QWaeUoEGt2DHAWuE5fOJc3v"
+SetEnv DBNAME "quotesdb_fw5o"
+SetEnv HOST "dpg-cg0cecl269vdqr9cksgg-a-postgres.render.com"
+SetEnv PORT "5432"
