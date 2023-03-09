@@ -17,8 +17,8 @@
             //Create query
             $query = "SELECT
                         id,
-                        author,
-                        FROM " . $this->table . "
+                        author
+                        FROM ".$this->table."
                         ORDER BY id ASC";
             
             //Prepare statement

@@ -17,7 +17,7 @@
             //Create query
             $query = "SELECT
                         id,
-                        category,
+                        category
                         FROM " . $this->table . "
                         ORDER BY id ASC";
             
