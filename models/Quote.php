@@ -20,7 +20,7 @@
         //GET POST
         public function read(){
             //create query
-            if ($this->author_id && $this->category_id){
+            if (isset($this->author_id) && isset($this->category_id)){
                 $query = "SELECT
                         q.id,
                         q.quote,
@@ -31,7 +31,7 @@
                         INNER JOIN categories c on q.category_id = c.id
                         WHERE a.id = :author_id AND c.id = :category_id";
             }
-            else if ($this->author_id){
+            else if (isset($this->author_id)){
                 $query = "SELECT
                         q.id,
                         q.quote,
@@ -42,7 +42,7 @@
                         INNER JOIN categories c on q.category = c.id
                         WHERE a.id = :author_id";
             }
-            else if($this->category_id){
+            else if(isset($this->category_id)){
                 $query = "SELECT
                         q.id,
                         q.quote,
