@@ -43,6 +43,6 @@
     } else {
         //NO author
         echo json_encode(
-            array('message' => 'No Categories Found')
+            array('message' => 'No Authors Found')
         );
     }

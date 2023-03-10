@@ -35,7 +35,7 @@
             //Create query
             $query = "SELECT
                         id,
-                        author,
+                        author
                         FROM " . $this->table ."
                         WHERE id = :id
                         LIMIT 1 OFFSET 0";

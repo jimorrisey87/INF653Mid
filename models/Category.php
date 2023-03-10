@@ -35,7 +35,7 @@
             //Create query
             $query = "SELECT
                         id,
-                        category,
+                        category
                         FROM " . $this->table ."
                         WHERE id = :id
                         LIMIT 1 OFFSET 0";
