@@ -28,6 +28,6 @@
 //cannot find id
    else {
     echo json_encode(array(
-        'message' => 'author_id not found'
+        'message' => 'author_id Not Found'
     ));
    }
