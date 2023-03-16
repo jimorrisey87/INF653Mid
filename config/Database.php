@@ -20,7 +20,7 @@
         //DB connect
         public function connect(){
             $this->conn = null;
-            $dsn = "pgsql:{$this->host};{$this->port};{$this->dbname};";
+            $dsn = "pgsql:host={$this->host};port={$this->port};dbname={$this->dbname};";
 
             try{
                 $this->conn = new PDO($dsn, $this->username, $this->password);
