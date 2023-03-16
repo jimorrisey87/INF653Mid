@@ -39,8 +39,8 @@
                         c.category as category
                         FROM " . $this->table . " q
                         INNER JOIN authors a on q.author_id = a.id
-                        INNER JOIN categories c on q.category = c.id
-                        WHERE a.id = :author_id";
+                        INNER JOIN categories c on q.category_id = c.id
+                       WHERE a.id = :author_id";
             }
             else if(isset($this->category_id)){
                 $query = "SELECT
