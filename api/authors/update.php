@@ -39,6 +39,6 @@
     } else {
         echo json_encode(
             array(
-                'message' => 'No quotes found'
+                'message' => 'author_id Not Found'
         ));
     }

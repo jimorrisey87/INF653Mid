@@ -42,7 +42,7 @@
     $cat->read_single();
     if(!$cat->category){
         echo json_encode(array(
-            'message' => 'no category_id'
+            'message' => 'category_id Not Found'
         ));
         exit();
     }
@@ -50,7 +50,7 @@
     $aut->read_single();
     if(!$aut->author){
         echo json_encode(array(
-            'message' => 'no author_id'
+            'message' => 'author_id Not Found'
         ));
         exit();
     }
@@ -67,6 +67,6 @@
     } else {
         echo json_encode(
             array(
-                'message' => 'No quotes found'
+                'message' => 'No Quotes Found'
         ));
     }
