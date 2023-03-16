@@ -30,7 +30,7 @@
     //if data is not all set, send error message and exit
     if ( !isset($data->quote) || !isset($data->author_id) || !isset($data->category))
     {
-        echo json_encode(array('message' => 'Missing Parameters'));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     }
     
@@ -49,6 +49,6 @@
         );
     } else {
         echo json_encode(
-            array('message' => 'Quote Not Created')
+            array('message' => 'No Quotes Found')
         );
     }
