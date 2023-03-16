@@ -22,7 +22,7 @@
 
     //data is not set
     if(!isset($data->id)){
-        echo(json_encode(array('message' => 'Missing parameters')));
+        echo(json_encode(array('message' => 'Missing Required Parameters')));
         exit();
     } else { //else delete
         $cat->id = $data->id;

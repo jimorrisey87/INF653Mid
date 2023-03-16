@@ -24,7 +24,7 @@
     //if data is not all set, send error message and exit
     if ( !isset($data->category) )
     {
-        echo json_encode(array('message' => 'Missing Parameters'));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
         exit();
     } else {
         $cat->Category = $data->category;
