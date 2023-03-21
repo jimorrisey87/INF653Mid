@@ -144,12 +144,13 @@
              //Execute query
              if($stmt->execute()){
                 return true;
-             }
+             } else {
 
              //print error if something goes wrong
              printf("Error: %s.\n", $stmt->error);
 
              return false;
+             }
 
         }
 
@@ -216,7 +217,7 @@
             if($stmt->execute()){
                 if ($stmt->rowCount() == 0){
                     return false;
-                }else {
+                } else {
                 return true;
                 }
              } else {
