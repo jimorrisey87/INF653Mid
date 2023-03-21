@@ -122,7 +122,7 @@
         //Create Post
         public function create(){
             // Create query
-            $query = 'INSERT INTO ' . $this->table . '
+            $query = 'INSERT INTO ' . $this->table. '
               SET
                 quote = :quote,
                 author_id = :author_id,
@@ -182,14 +182,20 @@
 
              //Execute query
              if($stmt->execute()){
-                return true;
-             }
+                if ($stmt->rowCount()==0){
+                    return false;
+                }
+                else{
+                    return true;
+                }
+             } else {
 
              //print error if something goes wrong
              printf("Error: %s.\n", $stmt->error);
 
              return false;
 
+            }
         }
 
         //Delete post
@@ -208,12 +214,17 @@
 
             //Execute query
             if($stmt->execute()){
+                if ($stmt->rowCount() == 0){
+                    return false;
+                }else {
                 return true;
-             }
+                }
+             } else {
 
              //print error if something goes wrong
              printf("Error: %s.\n", $stmt->error);
 
              return false;
+             }
         } 
     }
