@@ -22,7 +22,7 @@
 
     //data is not set
     if(!isset($data->id)){
-        echo(json_encode(array('message' => 'Missing parameters')));
+        echo(json_encode(array('message' => 'Missing Required parameters')));
         exit();
     }
 
@@ -36,6 +36,6 @@
         );
     } else {
         echo json_encode(
-            array('message' => 'Quote Not Deleted')
+            array('message' => 'No Quotes Found')
         );
     }
