@@ -28,7 +28,7 @@
         exit();
     } else {
         $cat->Category = $data->category;
-        $vat->create();
+        $cat->create();
         echo json_encode(array('id' => $db->lastInsertId(), 'category'=>$cat->category));
 
     }

@@ -43,11 +43,18 @@
     $cat->id = $data->category_id;
 
     //Create post
-    if($quo->create()){
+    if (!$aut->author){
+        echo json_encode(array('message' => 'author_id Not Found'));
+    }
+
+    else if (!$cat->category){
+        (array('message' => 'category_id Not Found'));
+    }
+    else if($quo->create()){
         echo json_encode(
-            array('message' => 'Quote Created')
-        );
-    } else {
+            array('message' => 'Quote Created'));
+    } 
+    else{
         echo json_encode(
             array('message' => 'No Quotes Found')
         );
