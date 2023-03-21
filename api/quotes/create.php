@@ -53,7 +53,7 @@
     }
     else if($quo->create()){
         echo json_encode(
-            array('message' => 'Quote Created'));
+            array('id' =>$db->lastInsertId(), 'author_id' =>$quo->author_id, 'quote' => $quo->quote, 'category_id' => $quo->category_id));
     } 
     else{
         echo json_encode(
