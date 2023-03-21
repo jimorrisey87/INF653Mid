@@ -24,9 +24,8 @@
     if ( !isset($data->category) )
     {
         echo json_encode(array('message' => 'Missing Required Parameters'));
-        exit();
     } else {
-        $cat->Category = $data->category;
+        $cat->category = $data->category;
         $cat->create();
         echo json_encode(array('id' => $db->lastInsertId(), 'category'=>$cat->category));
 
