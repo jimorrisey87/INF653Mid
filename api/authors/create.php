@@ -3,8 +3,7 @@
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
     header('Access-Control-Allow-Methods: POST');
-    header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
-    Access-Control-Allow-Methods, Authorization.X-Requested-With');
+    header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization.X-Requested-With');
 
     include_once '../../config/Database.php';
     include_once '../../models/Author.php';
@@ -28,7 +27,7 @@
         exit();
     } else {
         $aut->author = $data->author;
-        $vat->create();
+        $aut->create();
         echo json_encode(array('id' => $db->lastInsertId(), 'author'=>$aut->author));
 
     }
