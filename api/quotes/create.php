@@ -41,9 +41,7 @@
     $aut->id = $data->author_id;
     $cat->id = $data->category_id;
 
-    //Do some checks
-    $aut->read_single();
-    $cat->read_single();
+
 
     //Create post
     if (!$aut->author){
