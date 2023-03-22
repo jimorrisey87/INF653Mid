@@ -122,11 +122,11 @@
         //Create Post
         public function create(){
             // Create query
-            $query = 'INSERT INTO ' . $this->table. '
-              SET
-                quote = :quote,
-                author_id = :author_id,
-                category_id = :category_id';
+            $query = 'INSERT INTO ' . $this->table. ' (quote, category_id, author_id)
+            VALUES
+                (:quote,
+                :author_id,
+                :category_id)';
             
             //PREPARE STMT
              $stmt = $this->conn->prepare($query);
