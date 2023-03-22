@@ -46,6 +46,7 @@
     //Create post but checking author and category
     $cat->read_single();
     $aut->read_single();
+    $quo->create();
 
     //create 
 
