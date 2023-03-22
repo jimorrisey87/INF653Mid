@@ -56,7 +56,10 @@
         echo json_encode(array('message' => 'author_id Not Found'));
     }
     elseif($quo->create()){
-        echo json_encode ( array('id' =>$db->lastInsertId(), 'quote' => $quo->quote, 'category_id' => $quo->category_id,  'author_id' => $quo->author_id ));
+        echo json_encode (array('id' =>$db->lastInsertId()));
+        echo json_encode (array('quote' => $quo->quote));
+        echo json_encode (array('category_id' => $quo->category_id));
+        echo json_encode (array('author_id' => $quo->author_id ));
     } 
 
     else {
