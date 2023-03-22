@@ -43,7 +43,7 @@
 
 
 
-    //Create post
+    //Create post but checking author and category
     if (!$aut->author){
         echo json_encode(array('message' => 'author_id Not Found'));
     }
@@ -51,12 +51,11 @@
     else if (!$cat->category){
         echo json_encode(array('message' => 'category_id Not Found'));
     }
+
+    //create 
     else if($quo->create()){
-        echo json_encode(
-            array('id' =>$db->lastInsertId(), 'author_id' =>$quo->author_id, 'quote' => $quo->quote, 'category_id' => $quo->category_id));
+        echo json_encode(array('id' =>$db->lastInsertId(), 'author_id' => $quo->author_id, 'quote' => $quo->quote, 'category_id' => $quo->category_id));
     } 
     else{
-        echo json_encode(
-            array('message' => 'No Quotes Found')
-        );
+        echo json_encode(array('message' => 'No Quotes Found'));
     }
