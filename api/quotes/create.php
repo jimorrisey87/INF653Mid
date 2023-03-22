@@ -46,7 +46,6 @@
     //Create post but checking author and category
     $cat->read_single();
     $aut->read_single();
-    $quo->create();
 
     //create 
 
@@ -57,7 +56,7 @@
         echo json_encode(array('message' => 'author_id Not Found'));
     }
     elseif($quo->create()){
-        echo json_encode(array('id' =>$db->lastInsertId(), 'quote' => $quo->quote, 'category_id' => $quo->category_id,  'author_id' => $quo->author_id ));
+        echo json_encode ( array('id' =>$db->lastInsertId(), 'quote' => $quo->quote, 'category_id' => $quo->category_id,  'author_id' => $quo->author_id ));
     } 
 
     else {
