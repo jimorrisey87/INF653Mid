@@ -50,18 +50,12 @@
     if(!$cat->category){
         echo json_encode(array('message' => 'category_id Not Found'));
     }
-    else {
-        echo json_encode(array('message' => 'No Quotes Found'));
-    }
 
-    if (!$aut->author){
+    elseif(!$aut->author){
         echo json_encode(array('message' => 'author_id Not Found'));
     }
-    else {
-        echo json_encode(array('message' => 'No Quotes Found'));
-    }
-        
-    if($quo->create()){
+
+    elseif($quo->create()){
                 echo json_encode(array('id' =>$db->lastInsertId(), 'author_id' => $quo->author_id, 'quote' => $quo->quote, 'category_id' => $quo->category_id));
     } 
     else {
