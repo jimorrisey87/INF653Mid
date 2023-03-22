@@ -59,12 +59,13 @@
     
     //create quote
     if($quo->create()){
-        echo json_encode (array('id' =>$db->id,
-                                'quote' => $quo->quote,
-                                'category_id' => $quo->category_id,
-                                'author_id' => $quo->author_id ));
-    } 
-
-    else {
+        echo json_encode(
+            array(
+                'id' => $quo->id,
+                'quote' => $quo->quote,
+                'author_id' => $quo->author_id,
+                'category_id' => $quo->category_id
+        ));
+    } else {
         echo json_encode(array('message' => 'No Quotes Found'));
     }
