@@ -44,19 +44,22 @@
 
 
     //Create post but checking author and category
+    //Check category
     $cat->read_single();
-    $aut->read_single();
-
-    //create 
-
     if(!$cat->category){
         echo json_encode(array('message' => 'category_id Not Found'));
+        exit ();
     }
-    elseif(!$aut->author){
+    //check author
+    $aut->read_single();
+    if(!$aut->author){
         echo json_encode(array('message' => 'author_id Not Found'));
+        exit();
     }
-    elseif($quo->create()){
-        echo json_encode (array('id' =>$db->lastInsertId(),
+    
+    //create quote
+    if($quo->create()){
+        echo json_encode (array('id' =>$db->id,
                                 'quote' => $quo->quote,
                                 'category_id' => $quo->category_id,
                                 'author_id' => $quo->author_id ));
